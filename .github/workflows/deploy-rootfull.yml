@@ -5,7 +5,7 @@ on:
 
 env:
   GITHUB_URL: https://api.github.com/repos/go-gitea/gitea/releases/latest
-  REGISTRY_IMAGE: zyxd/gitea
+  REGISTRY_IMAGE: karakayv/gitea
 
 jobs:
   check:
@@ -28,7 +28,7 @@ jobs:
         id: docker-exists-normal
         shell: bash
         env:
-          DOCKER_URL: https://hub.docker.com/v2/repositories/zyxd/gitea/tags/${{ steps.docker-tag.outputs.TAG }}
+          DOCKER_URL: https://hub.docker.com/v2/repositories/karakayv/gitea/tags/${{ steps.docker-tag.outputs.TAG }}
         run: |
          if [ `curl --silent -f -lSL $DOCKER_URL` ]; then
            echo "exists=true" >> "$GITHUB_OUTPUT"
@@ -40,7 +40,7 @@ jobs:
         id: docker-exists-rootless
         shell: bash
         env:
-          DOCKER_URL: https://hub.docker.com/v2/repositories/zyxd/gitea/tags/${{ steps.docker-tag.outputs.TAG }}-rootless
+          DOCKER_URL: https://hub.docker.com/v2/repositories/karakayv/gitea/tags/${{ steps.docker-tag.outputs.TAG }}-rootless
         run: |
          if [ `curl --silent -f -lSL $DOCKER_URL` ]; then
            echo "exists=true" >> "$GITHUB_OUTPUT"
