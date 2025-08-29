@@ -5,4 +5,3 @@ Docker images built from the [official Gitea repository](https://github.com/go-g
 - arm/v7
 - arm/v6
 - amd64
-- i386
