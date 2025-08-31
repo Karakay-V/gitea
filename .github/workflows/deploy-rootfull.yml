@@ -22,7 +22,7 @@ jobs:
     
       - name: Set docker tag
         id: docker-tag
-        run: echo "tag=`echo ${{ steps.github-tag.outputs.TAG }} | sed 's/^v//'`" >> "$GITHUB_OUTPUT"
+        run: echo "tag=`echo ${{ steps.github-tag.outputs.tag }} | sed 's/^v//'`" >> "$GITHUB_OUTPUT"
 
       - name: Check that docker normal image already exists
         id: docker-exists-normal
