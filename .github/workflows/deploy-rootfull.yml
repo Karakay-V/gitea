@@ -2,6 +2,8 @@ name: Docker image - rootfull
 
 on:
   workflow_dispatch:
+  schedule:
+     - cron: "0 0 * * 0"
 
 env:
   GITHUB_URL: https://api.github.com/repos/go-gitea/gitea/releases/latest
