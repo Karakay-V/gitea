@@ -137,7 +137,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY_IMAGE }}
           tags: |
-            type=raw,value=${{ needs.check.outputs.docker-tag }}
+            type=raw,value=${{ steps.docker-tag.outputs.TAG }}
             type=raw,value=latest
       
       - name: Login to Docker Hub
